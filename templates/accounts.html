@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>My accounts</h1>
+
+    {% for account in accounts %}
+        <p>{{ account.ownerName }} - {{ account.balance }} {{ account.currency }}</p>
+    {% empty %}
+        <p>No accounts yet.</p>
+    {% endfor %}
+{% endblock %}

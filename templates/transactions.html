@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>My Transactions</h1>
+
+{% for transaction in transactions %}
+    <p>
+        {{ transaction.account.ownerName }} -
+        {{ transaction.transaction_type }}:
+        {{ transaction.amount }} {{ transaction.account.currency }}
+        {{ transaction.date_created }}
+        {{ transaction.description }}
+    </p>
+{% empty %}
+    <p>No transactions yet.</p>
+{% endfor %}
+{% endblock %}

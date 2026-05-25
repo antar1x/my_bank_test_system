@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>My Cards</h1>
+
+    {% for card in cards %}
+        <p>{{ card.account.ownerName }} <br>
+            {{ card.account.currency }} - {{ card.card_number }}<br>
+            {{ card.expiry_date }}<br>
+            {% if card.is_active %}
+                Card is active
+            {% else %}
+                Card is not active
+            {% endif %}
+        </p>
+    {% empty %}
+        <p>No cards yet.</p>
+    {% endfor %}
+{% endblock %}

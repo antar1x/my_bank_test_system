@@ -15,4 +15,8 @@
     {% empty %}
         <p>No cards yet.</p>
     {% endfor %}
+<br>
+<a href="{% url 'card_create' %}">Open new card</a>
+<br>
+<a href="{% url 'card_transfer' %}">Transfer to card</a>
 {% endblock %}

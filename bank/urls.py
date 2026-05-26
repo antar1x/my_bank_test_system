@@ -3,7 +3,7 @@ from django.urls import path
 from bank import views
 from django.contrib.auth.views import LogoutView
 
-from bank.views import HomeView, CardsView
+from bank.views import HomeView, CardsView, CardCreateView, DifferentTransferView
 
 urlpatterns = [
     path('accounts/', views.AccountListView.as_view(), name='accounts'),
@@ -15,4 +15,6 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('', HomeView.as_view(), name='home'),
     path('cards/', CardsView.as_view(), name='cards'),
+    path('cards/create/', CardCreateView.as_view(), name='card_create'),
+    path('cards/transfer/', DifferentTransferView.as_view(), name='card_transfer')
 ]
